@@ -34,55 +34,46 @@ const WhichClassesAreAvailable = () => {
     };
     return (
         <div>
-            <form action="" onSubmit={handleOnSubmit}>
-                <div className="flex justify-center space-x-4">
-                    <div>
-                        <select
-                            className="appearance-none bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline cursor-pointer"
-                            onChange={handleDayChange}
-                            value={selectedDay}
-                        >
-                            <option value="" disabled>
-                                Select day
+            <form action="" onSubmit={handleOnSubmit} className="mx-3">
+                <div className="sm:flex justify-center sm:space-x-4 space-y-3 sm:space-y-0">
+                    <select
+                        id="countries"
+                        className="appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        onChange={handleDayChange}
+                        value={selectedDay}
+                    >
+                        <option value="" disabled>
+                            🌱 Select day
+                        </option>
+                        {dayOptions?.map((option) => (
+                            <option key={option.value} value={option.value}>
+                                {option.label}
                             </option>
-                            {dayOptions?.map((option) => (
-                                <option key={option.value} value={option.value}>
-                                    {option.label}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                    <div>
-                        <select
-                            className="appearance-none bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline cursor-pointer"
-                            onChange={handleTimeChange}
-                            value={selectedTime}
-                        >
-                            <option value="" disabled>
-                                Select time slot
+                        ))}
+                    </select>
+                    <select
+                        id="countries"
+                        className="appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        onChange={handleTimeChange}
+                        value={selectedTime}
+                    >
+                        <option value="" disabled>
+                            ⏰ Select time slot
+                        </option>
+                        {timeOptions?.map((option) => (
+                            <option key={option.value} value={option.value}>
+                                {option.label}
                             </option>
-                            {timeOptions?.map((option) => (
-                                <option key={option.value} value={option.value}>
-                                    {option.label}
-                                </option>
-                            ))}
-                        </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                            <svg
-                                className="fill-current h-4 w-4"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                            >
-                                <path d="M10 12l-5-5 1.41-1.41L10 9.18l3.59-3.59L15 7l-5 5z" />
-                            </svg>
-                        </div>
-                    </div>
+                        ))}
+                    </select>
                 </div>
-                <button>Check Available Rooms</button>
+          <button className="mt-4 px-6 py-2 bg-blue-50 border border-blue-500 rounded text-blue-500">Check Available Rooms</button>
             </form>
             <div>
                 {results?.map((result) => (
-                    <div key={result.id}></div>
+                    <div key={result}>
+                        <p>{result}</p>
+                    </div>
                 ))}
             </div>
         </div>
