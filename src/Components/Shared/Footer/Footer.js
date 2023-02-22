@@ -6,7 +6,10 @@ const Footer = () => {
         <footer class="p-4 bg-gray-50 rounded shadow md:flex md:items-center md:justify-between md:p-6 mt-60">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 © 2023{" "}
-                <a href="https://flowbite.com/" class="hover:underline">
+                <a
+                    href="https://github.com/mahadihassanriyadh"
+                    class="hover:underline"
+                >
                     Md. Mahadi Hassan Riyadh™
                 </a>{" "}
                 &{" "}
@@ -22,9 +25,10 @@ const Footer = () => {
                 <li>
                     <a
                         href="https://github.com/mahadihassanriyadh/chicken-coop"
-                        class="mr-4 hover:underline md:mr-6 "
+                        class="mr-4 md:mr-6 flex items-center"
                     >
-                        <img className="w-8" src={gitHubLogo} alt="" />
+                        <span className="text-xl">★</span>{" "}
+                        <img className="w-8 ml-2" src={gitHubLogo} alt="" />
                     </a>
                 </li>
                 {/* <li>

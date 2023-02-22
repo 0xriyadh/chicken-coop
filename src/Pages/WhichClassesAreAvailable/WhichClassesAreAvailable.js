@@ -69,9 +69,9 @@ const WhichClassesAreAvailable = () => {
                 </div>
           <button className="mt-4 px-6 py-2 bg-blue-50 border border-blue-500 rounded text-blue-500">Check Available Rooms</button>
             </form>
-            <div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-6 mx-3">
                 {results?.map((result) => (
-                    <div key={result}>
+                    <div className="py-4 px-4 border bg-gray-50" key={result}>
                         <p>{result}</p>
                     </div>
                 ))}
