@@ -12,6 +12,6 @@ export const timeOptions = [
     { value: "11:00 AM-12:20 PM", label: "11:00 AM-12:20 PM" },
     { value: "12:30 PM-01:50 PM", label: "12:30 PM-01:50 PM" },
     { value: "02:00 PM-03:20 PM", label: "02:00 PM-03:20 PM" },
-    { value: "03:30 PM-4:50 PM", label: "03:30 PM-4:50 PM" },
+    { value: "03:30 PM-04:50 PM", label: "03:30 PM-04:50 PM" },
     { value: "05:00 PM-06:20 PM", label: "05:00 PM-06:20 PM" },
 ];

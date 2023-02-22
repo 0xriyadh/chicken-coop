@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 // Read the input file
-let data = require("./data.json");
+let data = require("./rawData.json");
 data = data.Sheet1;
 
 // Process the data
@@ -12,7 +12,7 @@ const formattedData = {
         "11:00 AM-12:20 PM": [],
         "12:30 PM-01:50 PM": [],
         "02:00 PM-03:20 PM": [],
-        "03:30 PM-4:50 PM": [],
+        "03:30 PM-04:50 PM": [],
         "05:00 PM-06:20 PM": [],
     },
     Sunday: {
@@ -21,7 +21,7 @@ const formattedData = {
         "11:00 AM-12:20 PM": [],
         "12:30 PM-01:50 PM": [],
         "02:00 PM-03:20 PM": [],
-        "03:30 PM-4:50 PM": [],
+        "03:30 PM-04:50 PM": [],
         "05:00 PM-06:20 PM": [],
     },
     Monday: {
@@ -30,7 +30,7 @@ const formattedData = {
         "11:00 AM-12:20 PM": [],
         "12:30 PM-01:50 PM": [],
         "02:00 PM-03:20 PM": [],
-        "03:30 PM-4:50 PM": [],
+        "03:30 PM-04:50 PM": [],
         "05:00 PM-06:20 PM": [],
     },
     Tuesday: {
@@ -39,7 +39,7 @@ const formattedData = {
         "11:00 AM-12:20 PM": [],
         "12:30 PM-01:50 PM": [],
         "02:00 PM-03:20 PM": [],
-        "03:30 PM-4:50 PM": [],
+        "03:30 PM-04:50 PM": [],
         "05:00 PM-06:20 PM": [],
     },
     Wednesday: {
@@ -48,7 +48,7 @@ const formattedData = {
         "11:00 AM-12:20 PM": [],
         "12:30 PM-01:50 PM": [],
         "02:00 PM-03:20 PM": [],
-        "03:30 PM-4:50 PM": [],
+        "03:30 PM-04:50 PM": [],
         "05:00 PM-06:20 PM": [],
     },
     Thursday: {
@@ -57,7 +57,7 @@ const formattedData = {
         "11:00 AM-12:20 PM": [],
         "12:30 PM-01:50 PM": [],
         "02:00 PM-03:20 PM": [],
-        "03:30 PM-4:50 PM": [],
+        "03:30 PM-04:50 PM": [],
         "05:00 PM-06:20 PM": [],
     },
 };
