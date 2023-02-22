@@ -3,7 +3,6 @@ const fs = require("fs");
 // Read the input file
 let data = require("./rawData.json");
 data = data.Sheet1;
-
 // Process the data
 const formattedData = {
     Saturday: {
@@ -87,7 +86,7 @@ function isRoomAvailable(data, room, time) {
         (obj) =>
             obj.Room === room &&
             obj.Day === time.day &&
-            !(time.start >= obj["Start time"] && time.end <= obj["End time"])
+            !(time.start === obj["Start time"] && time.end === obj["End time"])
     );
 }
 
@@ -111,8 +110,7 @@ for (let i = 0; i < days.length; i++) {
             start: timeSlots[j].start,
             end: timeSlots[j].end,
         };
-        const availableRooms = findAvailableRooms(data, time);
-        console.log(availableRooms);
+        const availableRooms = findAvailableRooms(data, time).sort();
         formattedData[days[i]][`${time.start}-${time.end}`] = availableRooms;
     }
 }
