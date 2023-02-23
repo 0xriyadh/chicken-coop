@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { dayOptions, timeOptions } from "../../data/daysAndTimeSlots";
-import ReactGA from "react-ga";
 
 const WhichClassesAreAvailable = () => {
     const [data, setData] = useState({});
@@ -15,7 +14,6 @@ const WhichClassesAreAvailable = () => {
             setData(data);
         }
         fetchData();
-        ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
 
     const handleDayChange = (event) => {
@@ -33,10 +31,6 @@ const WhichClassesAreAvailable = () => {
         if (selectedDay && selectedTime) {
             setResults(data[selectedDay][selectedTime]);
         }
-        ReactGA.event({
-            category: "User",
-            action: "Checked available classrooms", 
-        });
     };
     return (
         <div>

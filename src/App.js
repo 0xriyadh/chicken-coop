@@ -3,11 +3,7 @@ import Footer from "./Components/Shared/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import WhichClassesAreAvailable from "./Pages/WhichClassesAreAvailable/WhichClassesAreAvailable";
 import chickenCoopLogo from "./assets/images/logo.png";
-import ReactGA from "react-ga";
 import { Analytics } from "@vercel/analytics/react";
-
-const TRACKING_ID = "G-EGYQS9DNB8";
-ReactGA.initialize(TRACKING_ID);
 
 function App() {
     return (
