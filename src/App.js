@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 function App() {
     return (
         <div className="App container mx-auto mt-12">
-            <img className="mx-auto w-32" src={chickenCoopLogo} alt="" />
+            <img className="mx-auto w-44" src={chickenCoopLogo} alt="" />
             <div className="mb-6 mt-4">
                 <h1 className="text-4xl text-gray-800 font-bold">
                     Chicken Coop!
