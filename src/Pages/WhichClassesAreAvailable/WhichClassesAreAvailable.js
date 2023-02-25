@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PrimaryButton from "../../Components/Buttons/PrimaryButton";
 import { dayOptions, timeOptions } from "../../data/daysAndTimeSlots";
 
 const WhichClassesAreAvailable = () => {
@@ -67,9 +68,7 @@ const WhichClassesAreAvailable = () => {
                         ))}
                     </select>
                 </div>
-                <button className="mt-4 px-6 py-2 bg-white border border-orange-500 rounded text-orange-500">
-                    Check Available Rooms
-                </button>
+                <PrimaryButton type="submit" label="Check Available Rooms" />
             </form>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-6 mx-3">
                 {results?.map((result) => (
