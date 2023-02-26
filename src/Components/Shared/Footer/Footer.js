@@ -19,7 +19,7 @@ const Footer = () => {
                 >
                     Tanzim Rahman Sabib™
                 </a>
-                . All Rights Reserved.
+                {/* . All Rights Reserved. */}
             </span>
             <ul class="flex flex-wrap items-center justify-center md:justify-end mt-3 text-sm text-gray-500 dark:text-gray-400 md:mt-0">
                 <li>
