@@ -23,7 +23,7 @@ const Footer = () => {
                     href="https://github.com/mahadihassanriyadh/chicken-coop/blob/main/LICENSE"
                     class="hover:underline"
                 >
-                    MIT license
+                    {" "}MIT license
                 </a>
             </span>
             <ul class="flex flex-wrap items-center justify-center md:justify-end mt-3 text-sm text-gray-500 dark:text-gray-400 md:mt-0">
