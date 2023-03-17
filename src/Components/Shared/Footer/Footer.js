@@ -10,16 +10,21 @@ const Footer = () => {
                     href="https://github.com/mahadihassanriyadh"
                     class="hover:underline"
                 >
-                    Md. Mahadi Hassan Riyadh™
+                    Md. Mahadi Hassan Riyadh
                 </a>{" "}
                 &{" "}
                 <a
                     href="https://www.facebook.com/tanzim.rahman.545"
                     class="hover:underline"
                 >
-                    Tanzim Rahman Sabib™
+                    Tanzim Rahman Sabib
                 </a>
-                {/* . All Rights Reserved. */}
+                <a
+                    href="https://github.com/mahadihassanriyadh/chicken-coop/blob/main/LICENSE"
+                    class="hover:underline"
+                >
+                    {/* MIT license */}
+                </a>
             </span>
             <ul class="flex flex-wrap items-center justify-center md:justify-end mt-3 text-sm text-gray-500 dark:text-gray-400 md:mt-0">
                 <li>
