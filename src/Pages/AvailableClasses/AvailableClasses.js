@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PrimaryButton from "../../Components/Buttons/PrimaryButton";
 import { dayOptions, timeOptions } from "../../data/daysAndTimeSlots";
 
-const WhichClassesAreAvailable = () => {
+const AvailableClasses = () => {
     const [data, setData] = useState({});
     const [selectedDay, setSelectedDay] = useState("");
     const [selectedTime, setSelectedTime] = useState("");
@@ -81,4 +81,4 @@ const WhichClassesAreAvailable = () => {
     );
 };
 
-export default WhichClassesAreAvailable;
+export default AvailableClasses;
