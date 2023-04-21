@@ -19,13 +19,9 @@ const AvailableClasses = () => {
 
     const handleDayChange = (event) => {
         setSelectedDay(event.target.value);
-        console.log(event.target.value);
-        console.log(data);
     };
     const handleTimeChange = (event) => {
         setSelectedTime(event.target.value);
-        console.log(event.target.value);
-        console.log(data);
     };
     const handleOnSubmit = (event) => {
         event.preventDefault();
@@ -38,7 +34,7 @@ const AvailableClasses = () => {
             <form action="" onSubmit={handleOnSubmit} className="mx-3">
                 <div className="sm:flex justify-center sm:space-x-4 space-y-3 sm:space-y-0">
                     <select
-                        id="countries"
+                        id="day"
                         className="appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         onChange={handleDayChange}
                         value={selectedDay}
@@ -53,7 +49,7 @@ const AvailableClasses = () => {
                         ))}
                     </select>
                     <select
-                        id="countries"
+                        id="time"
                         className="appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         onChange={handleTimeChange}
                         value={selectedTime}
