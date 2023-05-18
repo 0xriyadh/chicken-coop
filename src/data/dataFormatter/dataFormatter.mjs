@@ -1,5 +1,5 @@
 import fs from "fs";
-import { formattedData, days, timeSlots } from "./initialValues.js";
+import { formattedData, days, timeSlots } from "./initialValues.mjs";
 const rawData = fs.readFileSync("./rawData.json", "utf-8");
 let data = JSON.parse(rawData);
 
