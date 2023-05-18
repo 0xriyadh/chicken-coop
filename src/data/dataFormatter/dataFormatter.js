@@ -1,8 +1,8 @@
 const fs = require("fs");
-
-// Read the input file
 let data = require("./rawData.json");
 const { formattedData, days, timeSlots } = require("./initialValues");
+
+// Read the input file
 data = data.Sheet1;
 
 function isRoomAvailable(data, room, time) {
@@ -28,6 +28,8 @@ function findAvailableRooms(data, time) {
     return availableRooms;
 }
 
+// This loop will run for 6(days)*7(timeSlots) = 42 times.
+// It will find the available rooms for each time slot and store them in the formattedData object.
 for (let i = 0; i < days.length; i++) {
     for (let j = 0; j < timeSlots.length; j++) {
         const time = {
