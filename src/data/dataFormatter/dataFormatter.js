@@ -1,6 +1,7 @@
-const fs = require("fs");
-let data = require("./rawData.json");
-const { formattedData, days, timeSlots } = require("./initialValues");
+import fs from "fs";
+import { formattedData, days, timeSlots } from "./initialValues.js";
+const rawData = fs.readFileSync("./rawData.json", "utf-8");
+let data = JSON.parse(rawData);
 
 // Read the input file
 data = data.Sheet1;
@@ -41,7 +42,6 @@ for (let i = 0; i < days.length; i++) {
         formattedData[days[i]][`${time.start}-${time.end}`] = availableRooms;
     }
 }
-
 
 // Write the output file
 fs.writeFileSync("./output.json", JSON.stringify(formattedData));
