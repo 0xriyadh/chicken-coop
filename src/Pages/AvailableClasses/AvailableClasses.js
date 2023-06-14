@@ -3,7 +3,8 @@ import PrimaryButton from "../../Components/Buttons/PrimaryButton";
 import { dayOptions, timeOptions } from "../../data/daysAndTimeSlots";
 
 const AvailableClasses = () => {
-    const [data, setData] = useState({});
+    const [availableClassrooms, setAvailableClassrooms] = useState({});
+    const [labClasses, setLabClasses] = useState({});
     const [selectedDay, setSelectedDay] = useState("");
     const [selectedTime, setSelectedTime] = useState("");
     const [results, setResults] = useState([]);
@@ -12,7 +13,8 @@ const AvailableClasses = () => {
         async function fetchData() {
             const response = await fetch("/data.json");
             const data = await response.json();
-            setData(data);
+            setAvailableClassrooms(data.availableRooms);
+            setLabClasses(data.labRooms);
         }
         fetchData();
     }, []);
@@ -26,7 +28,7 @@ const AvailableClasses = () => {
     const handleOnSubmit = (event) => {
         event.preventDefault();
         if (selectedDay && selectedTime) {
-            setResults(data[selectedDay][selectedTime]);
+            setResults(availableClassrooms[selectedDay][selectedTime]);
         }
     };
     return (
