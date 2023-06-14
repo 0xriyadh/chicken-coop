@@ -1,10 +1,3 @@
-import fs from "fs";
-const rawData = fs.readFileSync("./rawData.json", "utf-8");
-let data = JSON.parse(rawData);
-
-// Read the input file
-data = data.Sheet1;
-
 // Function to find all the rooms those are used for lab classes. Lab classes are those classes where for the same section, same day and same course, there are multiple slots.
 /* 
     Example:
@@ -53,8 +46,7 @@ data = data.Sheet1;
     However, "UB20801" is not a lab room for "BUS529" course as the section is different. So, it should not be included in the output.
 */
 function findLabRooms(courseObjects) {
-  const labRoomsObject = { labRooms: [] }; 
-    const labRooms = labRoomsObject.labRooms;
+    const labRooms = [];
     const seenRooms = new Set();
 
     for (let i = 0; i < courseObjects.length; i++) {
@@ -68,6 +60,7 @@ function findLabRooms(courseObjects) {
                 obj1.Section === obj2.Section &&
                 obj1.Course === obj2.Course &&
                 obj1.Day === obj2.Day &&
+                !(obj1.Room.startsWith("UB1") || obj1.Room.startsWith("UB2")) &&
                 obj1["Start time"] !== obj2["Start time"]
             ) {
                 const room = obj1.Room;
@@ -80,10 +73,7 @@ function findLabRooms(courseObjects) {
         }
     }
 
-    return labRoomsObject;
+    return labRooms.sort();
 }
 
-
-
-// Write the output file
-fs.writeFileSync("./labRooms.json", JSON.stringify(findLabRooms(data)));
+export default findLabRooms;
