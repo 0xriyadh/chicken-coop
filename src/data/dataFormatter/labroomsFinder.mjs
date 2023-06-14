@@ -53,7 +53,8 @@ data = data.Sheet1;
     However, "UB20801" is not a lab room for "BUS529" course as the section is different. So, it should not be included in the output.
 */
 function findLabRooms(courseObjects) {
-    const labRooms = [];
+  const labRoomsObject = { labRooms: [] }; 
+    const labRooms = labRoomsObject.labRooms;
     const seenRooms = new Set();
 
     for (let i = 0; i < courseObjects.length; i++) {
@@ -79,10 +80,10 @@ function findLabRooms(courseObjects) {
         }
     }
 
-    return labRooms;
+    return labRoomsObject;
 }
 
 
-console.log(findLabRooms(data));
+
 // Write the output file
-// fs.writeFileSync("./labRooms.json", JSON.stringify(findLabRooms(data)));
+fs.writeFileSync("./labRooms.json", JSON.stringify(findLabRooms(data)));
