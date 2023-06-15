@@ -3,7 +3,7 @@ import Home from "./Pages/Home/Home";
 
 function App() {
     return (
-        <div className="App container mx-auto mt-12">
+        <div className="App container mx-auto">
             <Home />
         </div>
     );
