@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div className="flex flex-col h-screen justify-between">
             <div>
-                {/* <img className="mx-auto w-44" src={chickenCoopLogo} alt="" />
+                <img className="mx-auto w-44" src={chickenCoopLogo} alt="" />
                 <div className="mb-6 mt-4">
                     <h1 className="text-4xl text-gray-800 font-bold">
                         Chicken Coop!
@@ -28,7 +28,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <AvailableClasses /> */}
+                <AvailableClasses />
             </div>
             <Footer />
             <Analytics mode={"production"} />
