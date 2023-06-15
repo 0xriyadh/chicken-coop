@@ -70,7 +70,12 @@ const AvailableClasses = () => {
             </form>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-6 mx-3">
                 {results?.map((result) => (
-                    <div className="py-4 px-4 border bg-gray-50" key={result}>
+                    <div
+                        className={`py-4 px-4 border ${
+                            labClasses.includes(result) ? `bg-blue-100` : `bg-gray-50`
+                        }`}
+                        key={result}
+                    >
                         <p>{result}</p>
                     </div>
                 ))}

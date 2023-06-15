@@ -3,7 +3,7 @@ import gitHubLogo from "../../../assets/logos/github.svg";
 
 const Footer = () => {
     return (
-        <footer class="p-4 bg-gray-50 rounded shadow md:flex md:items-center md:justify-between md:p-6 mt-60">
+        <footer class="p-4 bg-gray-50 rounded shadow md:flex md:items-center md:justify-between md:p-6 mt-10">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 Contributors:{" "}
                 <a
