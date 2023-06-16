@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AvailableClasses from "../AvailableClasses/AvailableClasses";
 import Footer from "../../Components/Shared/Footer/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import chickenCoopLogo from "../../assets/images/logo.png";
 
 const Home = () => {
+    const [gitStars, setGitStars] = useState(0);
+    useEffect(() => {
+        fetch("https://api.github.com/repos/mahadihassanriyadh/chicken-coop")
+            .then((res) => res.json())
+            .then((data) => setGitStars(data.stargazers_count));
+    }, [])
     return (
         <div className="flex flex-col h-screen justify-between">
             <div>
@@ -13,6 +19,21 @@ const Home = () => {
                     <h1 className="text-4xl text-gray-800 font-bold">
                         Chicken Coop!
                     </h1>
+                    <a
+                        href="https://github.com/mahadihassanriyadh/chicken-coop"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <div className="bg-gray-600 text-gray-200 inline-block my-3 px-6 py-2 border-2 border-gray-600 rounded-3xl shadow-2xl sm:text-lg hover:bg-white hover:text-gray-600 transition duration-300">
+                            <div className="flex items-center space-x-2">
+                                <span className="text-xl text-orange-300">
+                                    ★
+                                </span>{" "}
+                                <span>{gitStars} GitHub Stars</span>
+                            </div>
+                        </div>
+                    </a>
+
                     <p className="mx-4 mt-2 text-gray-600">
                         You can find all the available classrooms of BRACU at
                         any given time, by selecting the day and time below.
