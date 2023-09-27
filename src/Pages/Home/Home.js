@@ -14,6 +14,7 @@ const Home = () => {
     return (
         <div className="flex flex-col h-screen justify-between">
             <div>
+                <p className="my-4 bg-green-50 text-green-600 py-1.5 rounded">Updated till Fall 2023 ✅</p>
                 <img className="mx-auto w-44" src={chickenCoopLogo} alt="" />
                 <div className="mb-6 mt-4">
                     <h1 className="text-4xl text-gray-800 font-bold">
@@ -24,9 +25,9 @@ const Home = () => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <div className="bg-gray-600 text-gray-200 inline-block my-3 px-6 py-2 border-2 border-gray-600 rounded-3xl shadow-2xl sm:text-lg hover:bg-white hover:text-gray-600 transition duration-300">
+                        <div className="bg-gray-700 text-gray-200 inline-block my-3 px-6 py-2 border-2 border-gray-600 rounded shadow-2xl sm:text-lg hover:bg-white hover:text-gray-600 transition duration-300">
                             <div className="flex items-center space-x-2">
-                                <span className="text-xl text-orange-300">
+                                <span className="text-xl text-yellow-300">
                                     ★
                                 </span>{" "}
                                 <span>{gitStars} GitHub Stars</span>
