@@ -26,6 +26,10 @@ If you would like to contribute to this project, please follow these steps:
 4. Push your changes to your branch.
 5. Submit a pull request to this repository's main branch.
 
+## Contributors
+- Md. Mahadi Hassan Riyadh [@mahadihassanriyadh](https://github.com/mahadihassanriyadh)
+- Ratul Hasan [@Onnesok]([https://github.com/janesmith](https://github.com/Onnesok))
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/mahadihassanriyadh/chicken-coop/blob/main/LICENSE) file for details.
