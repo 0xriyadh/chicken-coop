@@ -3,14 +3,14 @@ import gitHubLogo from "../../../assets/logos/github.svg";
 
 const Footer = () => {
     return (
-        <footer class="p-4 bg-gray-50 rounded shadow md:flex md:items-center md:justify-between md:p-6 mt-10">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-                Contributors:{" "}
+        <footer class="p-4 bg-gray-50 rounded shadow md:flex md:items-center md:justify-between md:p-6 mt-10 text-gray-600">
+            <span></span>
+            <span class="text-sm sm:text-center">
                 <a
-                    href="https://github.com/mahadihassanriyadh"
+                    href="https://github.com/mahadihassanriyadh/chicken-coop#contributors"
                     class="hover:underline"
                 >
-                    Md. Mahadi Hassan Riyadh
+                    Contributors
                 </a>{" "}
                 ::
                 <a
@@ -21,7 +21,7 @@ const Footer = () => {
                     MIT license
                 </a>
             </span>
-            <ul class="flex flex-wrap items-center justify-center md:justify-end mt-3 text-sm text-gray-500 dark:text-gray-400 md:mt-0">
+            <ul class="flex flex-wrap items-center justify-center md:justify-end mt-3 text-sm text-gray-500 md:mt-0">
                 <li>
                     <a
                         href="https://github.com/mahadihassanriyadh/chicken-coop"
@@ -31,21 +31,6 @@ const Footer = () => {
                         <img className="w-8 ml-2" src={gitHubLogo} alt="" />
                     </a>
                 </li>
-                {/* <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">
-                        Privacy Policy
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">
-                        Licensing
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline">
-                        Contact
-                    </a>
-                </li> */}
             </ul>
         </footer>
     );

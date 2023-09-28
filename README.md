@@ -9,7 +9,7 @@ This is an open-source web application developed to help the students of BRAC Un
 3. Click on the "Check Aavailable Rooms" button.
 4. The app will show you the available classrooms for that particular day and time.
 
-# Chicken-Coop android app
+## Chicken Coop Android App
 
 Now you can also download Chicken-Coop apk file for your android device. 
 So, download now.......
@@ -28,7 +28,7 @@ If you would like to contribute to this project, please follow these steps:
 
 ## Contributors
 - Md. Mahadi Hassan Riyadh [@mahadihassanriyadh](https://github.com/mahadihassanriyadh)
-- Ratul Hasan [@Onnesok]([https://github.com/janesmith](https://github.com/Onnesok))
+- Ratul Hasan [@Onnesok](https://github.com/Onnesok)
 
 ## License
 
