@@ -15,3 +15,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@layer components {
+  .btn {
+    @apply px-6 py-2 bg-white border border-orange-500 rounded text-orange-500 hover:bg-orange-400 hover:text-white transition;
+  }
+
+  .select {
+    @apply appearance-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 focus:outline-none;
+  }
+}
