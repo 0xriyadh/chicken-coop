@@ -8,8 +8,8 @@ let data = JSON.parse(rawData);
 data = data.Sheet1;
 
 const finalOutput = {
-    availableRooms: findAvailableRoomsForAllTimeSlots(data),
-    labRooms: findLabRooms(data),
+  availableRooms: findAvailableRoomsForAllTimeSlots(data),
+  labRooms: findLabRooms(data),
 };
 
 // Write the output file
