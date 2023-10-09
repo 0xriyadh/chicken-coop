@@ -11,7 +11,7 @@ This is an open-source web application developed to help the students of BRAC Un
 
 ## Chicken Coop Android App
 
-Now you can also download Chicken-Coop apk file for your android device. 
+Now you can also download Chicken-Coop apk file for your android device.
 So, download now.......
 
 [Download apk](https://github.com/mahadihassanriyadh/chicken-coop/raw/main/Chicken-coop-app/apk%20file/chicken-coop.apk)
@@ -27,8 +27,10 @@ If you would like to contribute to this project, please follow these steps:
 5. Submit a pull request to this repository's main branch.
 
 ## Contributors
+
 - Md. Mahadi Hassan Riyadh [@mahadihassanriyadh](https://github.com/mahadihassanriyadh)
 - Ratul Hasan [@Onnesok](https://github.com/Onnesok)
+- Md. Tarikul Islam Anik [@tarikul-islam-anik](https://github.com/tarikul-islam-anik)
 
 ## License
 
