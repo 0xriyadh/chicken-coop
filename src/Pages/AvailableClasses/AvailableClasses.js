@@ -82,8 +82,10 @@ const AvailableClasses = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-6 mx-3">
         {results?.map((result) => (
           <div
-            className={`py-4 px-4 border ${
-              labClasses.includes(result) ? `bg-blue-100` : `bg-gray-50`
+            className={`py-4 px-4 border rounded ${
+              labClasses.includes(result)
+                ? `bg-blue-100 dark:bg-blue-800/30 dark:border-blue-600/30`
+                : `bg-gray-50 dark:bg-gray-700 dark:border-gray-600`
             }`}
             key={result}
           >
