@@ -1,6 +1,6 @@
 {
   "name": "chicken-coop",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "dependencies": {
     "@heroicons/react": "^2.0.18",
