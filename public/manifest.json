@@ -20,6 +20,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
+  "scope": "/",
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "description": "You can find all the available classrooms of BRACU at any given time, by selecting the day and time below."
