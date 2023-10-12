@@ -49,7 +49,7 @@ const Home = () => {
               <span className="w-5 h-5 border bg-gray-100 inline-block rounded dark:bg-gray-700 dark:border-gray-600"></span>
               <p>Regular Classrooms</p>
             </div>
-            <div className="flex space-x-2 items-center">
+            <div className="flex space-x-2 items-center -ml-7 sm:-ml-0">
               <span className="w-5 h-5 border bg-blue-100 inline-block rounded dark:bg-blue-800/30 dark:border-blue-600/30"></span>
               <p>Lab Classrooms</p>
             </div>
