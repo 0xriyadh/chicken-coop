@@ -5,20 +5,24 @@ import {
     timeOptions,
     getCurrentTimeSlot,
 } from "../../data/daysAndTimeSlots";
+import { useRef } from "react";
+import FindCommonRooms from "../../utils/findCommonRooms";
 
 const AvailableClasses = () => {
     const currentDay = new Date().toLocaleString("en-us", { weekday: "long" });
     const currentTime = getCurrentTimeSlot();
     const [availableClassrooms, setAvailableClassrooms] = useState({});
     const [selectedDay, setSelectedDay] = useState(currentDay);
-    const [selectedTime, setSelectedTime] = useState(currentTime);
+    const [selectedTime, setSelectedTime] = useState([]);
     const [results, setResults] = useState([]);
+    const [tempRes, setTempRes] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             const response = await fetch("/data.json");
             const data = await response.json();
             setAvailableClassrooms(data.availableRooms);
+            console.log(availableClassrooms[selectedDay])
         }
         fetchData();
     }, []);
@@ -26,13 +30,46 @@ const AvailableClasses = () => {
     const handleDayChange = (event) => {
         setSelectedDay(event.target.value);
     };
+
     const handleTimeChange = (event) => {
-        setSelectedTime(event.target.value);
+        const selectedValue = event.target.value;
+    
+        // If the checkbox is checked, add it to the selectedTime array
+        if (event.target.checked && selectedTime.length < 2) {
+            setSelectedTime((prevSelectedTime) => [...prevSelectedTime, selectedValue]);
+        } else {
+            // If the checkbox is unchecked, remove it from the selectedTime array
+            setSelectedTime((prevSelectedTime) => prevSelectedTime.filter((value) => value !== selectedValue));
+        }
+        console.log(selectedTime)
     };
+    
     const handleOnSubmit = (event) => {
         event.preventDefault();
         if (selectedDay && selectedTime) {
             setResults(availableClassrooms[selectedDay][selectedTime]);
+            
+            if(selectedTime.length == 1) {
+                setResults(availableClassrooms[selectedDay][selectedTime])
+            }
+
+            else if(selectedTime.length > 1) {
+                for(let i = 0; i < selectedTime.length-1; i++) {
+                    let ls1 = availableClassrooms[selectedDay][selectedTime[i]]
+                    let ls2 = availableClassrooms[selectedDay][selectedTime[i+1]]
+
+                    let ls_comm = FindCommonRooms(ls1, ls2)
+
+                    if(ls_comm) {
+                        setResults(ls_comm)
+                    }
+
+                    else {
+                        setResults([])
+                    }
+                }
+            }
+            
         }
     };
 
@@ -55,21 +92,21 @@ const AvailableClasses = () => {
                             </option>
                         ))}
                     </select>
-                    <select
-                        id="time"
-                        className="select"
-                        onChange={handleTimeChange}
-                        value={selectedTime}
-                    >
-                        <option value="" disabled>
-                            ⏰ Select time slot
-                        </option>
-                        {timeOptions?.map((option) => (
-                            <option key={option.value} value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
-                    </select>
+
+                </div>
+                <div className="mt-3">
+                    {timeOptions?.map((option) => (
+                        <div key={option.value}>
+                            <input
+                                type="checkbox"
+                                value={option.value}
+                                onChange={handleTimeChange}
+                                className="mr-2"
+                                disabled={selectedTime.length === 2 && !selectedTime.includes(option.value)}
+                            />
+                            <label htmlFor={option.value}>{option.label}</label>
+                        </div>
+                    ))}
                 </div>
                 <PrimaryButton
                     type="submit"
