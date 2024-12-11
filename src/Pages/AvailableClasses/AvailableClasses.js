@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import PrimaryButton from "../../Components/Buttons/PrimaryButton";
 import {
     dayOptions,
-    timeOptions,
     getCurrentTimeSlot,
+    roomOptions,
+    timeOptions,
 } from "../../data/daysAndTimeSlots";
 
 const AvailableClasses = () => {
@@ -12,6 +13,7 @@ const AvailableClasses = () => {
     const [availableClassrooms, setAvailableClassrooms] = useState({});
     const [selectedDay, setSelectedDay] = useState(currentDay);
     const [selectedTime, setSelectedTime] = useState(currentTime);
+    const [selectedRoom, setSelectedRoom] = useState("all");
     const [results, setResults] = useState([]);
 
     useEffect(() => {
@@ -29,10 +31,20 @@ const AvailableClasses = () => {
     const handleTimeChange = (event) => {
         setSelectedTime(event.target.value);
     };
+    const handleRoomChange = (event) => {
+        setSelectedRoom(event.target.value);
+    };
+
     const handleOnSubmit = (event) => {
         event.preventDefault();
         if (selectedDay && selectedTime) {
-            setResults(availableClassrooms[selectedDay][selectedTime]);
+            let filteredResults = availableClassrooms[selectedDay][selectedTime];
+            if (selectedRoom === "Regular Classrooms") {
+                filteredResults = filteredResults.filter(room => !room.endsWith("L"));
+            } else if (selectedRoom === "Lab Classrooms") {
+                filteredResults = filteredResults.filter(room => room.endsWith("L"));
+            }
+            setResults(filteredResults);
         }
     };
 
@@ -65,6 +77,21 @@ const AvailableClasses = () => {
                             ⏰ Select time slot
                         </option>
                         {timeOptions?.map((option) => (
+                            <option key={option.value} value={option.value}>
+                                {option.label}
+                            </option>
+                        ))}
+                    </select>
+                    <select
+                        id="room"
+                        className="select"
+                        onChange={handleRoomChange}
+                        value={selectedRoom}
+                    >
+                        <option value="" disabled>
+                            🏢 Select Room Type
+                        </option>
+                        {roomOptions?.map((option) => (
                             <option key={option.value} value={option.value}>
                                 {option.label}
                             </option>

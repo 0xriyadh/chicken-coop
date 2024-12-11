@@ -54,6 +54,12 @@ export const timeOptions = [
   },
 ];
 
+export const roomOptions = [
+  { value: "All Classrooms", label: "All Classrooms" },
+  { value: "Regular Classrooms", label: "Regular Classrooms" },
+  { value: "Lab Classrooms", label: "Lab Classrooms" },
+];
+
 export const getCurrentTimeSlot = () => {
   const currentTime = new Date()
     .toLocaleTimeString("en-US", {
