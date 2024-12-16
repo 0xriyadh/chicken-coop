@@ -3,7 +3,7 @@ import PrimaryButton from "../../Components/Buttons/PrimaryButton";
 import {
     dayOptions,
     getCurrentTimeSlot,
-    roomOptions,
+    roomTypes,
     timeOptions,
 } from "../../data/daysAndTimeSlots";
 
@@ -13,7 +13,7 @@ const AvailableClasses = () => {
     const [availableClassrooms, setAvailableClassrooms] = useState({});
     const [selectedDay, setSelectedDay] = useState(currentDay);
     const [selectedTime, setSelectedTime] = useState(currentTime);
-    const [selectedRoom, setSelectedRoom] = useState("all");
+    const [selectedRoomType, setSelectedRoomType] = useState("all");
     const [results, setResults] = useState([]);
 
     useEffect(() => {
@@ -32,16 +32,16 @@ const AvailableClasses = () => {
         setSelectedTime(event.target.value);
     };
     const handleRoomChange = (event) => {
-        setSelectedRoom(event.target.value);
+        setSelectedRoomType(event.target.value);
     };
 
     const handleOnSubmit = (event) => {
         event.preventDefault();
         if (selectedDay && selectedTime) {
             let filteredResults = availableClassrooms[selectedDay][selectedTime];
-            if (selectedRoom === "Regular Classrooms") {
+            if (selectedRoomType === "regularClassrooms") {
                 filteredResults = filteredResults.filter(room => !room.endsWith("L"));
-            } else if (selectedRoom === "Lab Classrooms") {
+            } else if (selectedRoomType === "labClassrooms") {
                 filteredResults = filteredResults.filter(room => room.endsWith("L"));
             }
             setResults(filteredResults);
@@ -86,12 +86,12 @@ const AvailableClasses = () => {
                         id="room"
                         className="select"
                         onChange={handleRoomChange}
-                        value={selectedRoom}
+                        value={selectedRoomType}
                     >
                         <option value="" disabled>
                             🏢 Select Room Type
                         </option>
-                        {roomOptions?.map((option) => (
+                        {roomTypes?.map((option) => (
                             <option key={option.value} value={option.value}>
                                 {option.label}
                             </option>
