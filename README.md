@@ -2,7 +2,7 @@
 This is an open-source web application developed to help the students of BRAC University to check the availability of classrooms at a particular day and time.
 
 ## How to Use
-1. Go to the [Web App](https://chicken-coop.vercel.app/) or download the [Android App](https://github.com/mahadihassanriyadh/chicken-coop/raw/main/Chicken-coop-app/apk%20file/chicken-coop.apk).
+1. Go to the [Web App](https://chicken-coop.vercel.app/)
 2. Select the desired date, time, and room from the drop-down menus.
 3. Click on the "Check Aavailable Rooms" button.
 4. The app will show you the available classrooms for that particular day, time, and room.
