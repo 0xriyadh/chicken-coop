@@ -16,7 +16,7 @@ If you would like to contribute to this project, please follow these steps:
 5. Submit a pull request to this repository's main branch.
 
 ## Contributors
-- Md. Mahadi Hassan Riyadh [@mahadihassanriyadh](https://github.com/mahadihassanriyadh)
+- Md. Mahadi Hassan Riyadh [@0xriyadh](https://github.com/0xriyadh)
 - Ratul Hasan [@Onnesok](https://github.com/Onnesok)
 - Md. Tarikul Islam Anik [@tarikul-islam-anik](https://github.com/tarikul-islam-anik)
 - Chowdhury Zaber Bin Zahid [@Chy-Zaber-Bin-Zahid](https://github.com/Chy-Zaber-Bin-Zahid)
