@@ -16,6 +16,7 @@ const AvailableClasses = () => {
     const [selectedRoomType, setSelectedRoomType] = useState("all");
     const [results, setResults] = useState([]);
 
+
     useEffect(() => {
         async function fetchData() {
             const response = await fetch("/data.json");
@@ -27,14 +28,17 @@ const AvailableClasses = () => {
 
     const handleDayChange = (event) => {
         setSelectedDay(event.target.value);
+        
     };
     const handleTimeChange = (event) => {
         setSelectedTime(event.target.value);
+      
     };
     const handleRoomChange = (event) => {
         setSelectedRoomType(event.target.value);
     };
 
+  
     const handleOnSubmit = (event) => {
         event.preventDefault();
         if (selectedDay && selectedTime) {
@@ -100,18 +104,20 @@ const AvailableClasses = () => {
                 </div>
                 <PrimaryButton
                     type="submit"
-                    label="Check Available Rooms"
-                    className="mt-4"
+                    // label="Check Available Rooms"
+                    label={selectedDay && selectedTime ? "Check Available Rooms" : "Select Day and Time"}
+                    className={`mt-4  ${ selectedDay && selectedTime ? 'btn' : ' btnd'}`}
+                    disabled={!selectedDay || !selectedTime}
                 />
+
             </form>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-6 mx-3">
                 {results?.map((result) => (
                     <div
-                        className={`py-4 px-4 border rounded ${
-                            result.endsWith("L")
+                        className={`py-4 px-4 border rounded ${result.endsWith("L")
                                 ? `bg-blue-100 dark:bg-blue-800/30 dark:border-blue-600/30`
                                 : `bg-gray-50 dark:bg-gray-700 dark:border-gray-600`
-                        }`}
+                            }`}
                         key={result}
                     >
                         <p>{result}</p>
