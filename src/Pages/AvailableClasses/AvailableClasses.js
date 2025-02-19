@@ -8,7 +8,7 @@ import {
 } from "../../data/daysAndTimeSlots";
 
 const AvailableClasses = () => {
-    const currentDay = new Date().toLocaleString("en-us", { weekday: "long" });
+    const currentDay = new Date().toLocaleString("en-us", { weekday: "long" }).toUpperCase();
     const currentTime = getCurrentTimeSlot();
     const [availableClassrooms, setAvailableClassrooms] = useState({});
     const [selectedDay, setSelectedDay] = useState(currentDay);
