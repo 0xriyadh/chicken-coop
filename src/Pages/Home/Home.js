@@ -17,7 +17,7 @@ const Home = () => {
       <div className="flex flex-col h-screen justify-between">
           <div>
               <p className="my-4 bg-green-100 text-green-600 py-1.5 rounded dark:text-green-300 dark:bg-green-800">
-                  Updated till Fall 2024 ✅
+                  Updated till Spring 2025 ✅
               </p>
               <img className="mx-auto w-44" src={chickenCoopLogo} alt="" />
               <div className="mb-6 mt-4">
